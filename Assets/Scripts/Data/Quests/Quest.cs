@@ -1,7 +1,14 @@
-﻿using System.Collections;
+﻿/* Filename: Quest.cs
+ * Author: Caleb
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Quest class
+ * 
+ * A quest with a set of goals required to complete it.
+ */
 public class Quest : MonoBehaviour
 {
     public List<Goal> Goals; //List of subgoals for quest.
@@ -18,6 +25,12 @@ public class Quest : MonoBehaviour
         if (IsActive) StartQuest();
     }
 
+    /* Function: StartQuest
+     *  
+     * Returns: Nothing 
+     * 
+     * Adds this quest to the player's quests list.
+     */
     public void StartQuest()
     {
         IsActive = true;
@@ -31,6 +44,12 @@ public class Quest : MonoBehaviour
         Update();
     }
 
+    /* Function: Update
+     *  
+     * Returns: Nothing 
+     * 
+     * Checks the quests goals and determines if the quest has been completed.
+     */
     public void Update()
     {
         if (!IsActive || isComplete) return;

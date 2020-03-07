@@ -1,7 +1,14 @@
-﻿using System.Collections;
+﻿/* Filename: Goal.cs
+ * Author: Caleb
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Goal class
+ * 
+ * A single task as part of a quest. 
+ */
 public class Goal : MonoBehaviour
 {
     public int amountRequired = 1; //Amount of times the task must be completed. Set to 1 if it is a boolean task.
@@ -20,6 +27,12 @@ public class Goal : MonoBehaviour
         if (ParentQuest != null) ParentQuest.Update();
     }
 
+    /* Function: Complete
+     *  
+     * Returns: Nothing 
+     * 
+     * Completes one action of the goal. Sets the goal to completed if sufficient completions have occured.
+     */
     public void Complete()
     {
         if (isComplete || ParentQuest == null) return;
@@ -36,6 +49,15 @@ public class Goal : MonoBehaviour
         ParentQuest.Update();
     }
 
+    /* Function: StrikeThrough
+     * 
+     * Args:
+     *  string s: the string to be converted.
+     *  
+     * Returns: Nothing 
+     * 
+     * Converts a string to have a line through the characters.
+     */
     string StrikeThrough(string s)
     {
         string strikethrough = "";

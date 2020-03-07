@@ -24,6 +24,12 @@ public class LoadingScene : MonoBehaviour
         
     }
 
+    /* Function: loadAsynchronously
+     *  
+     * Returns: Nothing 
+     * 
+     * Loads a scene while simultaneously updating the progress bar of the loading.
+     */
     IEnumerator loadAsynchronously()
     {
         //Load the scene Asynchronously, allowing us to display data while it loads.
