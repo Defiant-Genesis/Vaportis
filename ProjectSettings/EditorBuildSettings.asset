@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScreen.unity
     guid: bda28c6a50815d34ab3da298986fee5b
   - enabled: 1
-    path: Assets/Scenes/QuestTesting.unity
-    guid: 6c4bd74ff5d05d6499a03ba511ca84ca
-  - enabled: 1
-    path: Assets/Scenes/MainMenu/OptionsMenu.unity
-    guid: e4c3bd24429580742bf7948c7fd23971
+    path: Assets/Scenes/MovementSytem.unity
+    guid: 9f9379c710c73f94c9434337e19ef378
   m_configObjects: {}
