@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 10f;
-    public float gravity = -9.81f;
+    public float gravity = -78.48f;
     public float returnGravity = -2f;
     public float jumpHeight = 3f;
     public float runningSpeed = 200f;
@@ -46,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        velocity.y = 0;
+        if (Input.GetButton("Jump") && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

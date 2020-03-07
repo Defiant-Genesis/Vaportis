@@ -12,19 +12,21 @@ using UnityEngine;
 public class MenuHandler : MonoBehaviour
 {
     public List<GameObject> menus;
+    [HideInInspector] public bool active = true;
+    [HideInInspector] public bool isPaused = false;
 
     /* Function: OpenMenu
      * 
      * Args:
      *  int index: the index of the menu to open.
      *  
-     * Returns: Nothing 
+     * Returns: Nothing.
      * 
      * Makes the target menu visible.
      */
     public void OpenMenu(int index)
     {
-        menus[index].SetActive(true);
+        if (active) menus[index].SetActive(true);
     }
 
     /* Function: CloseMenu
@@ -32,13 +34,13 @@ public class MenuHandler : MonoBehaviour
      * Args:
      *  int index: the index of the menu to close.
      *  
-     * Returns: Nothing 
+     * Returns: Nothing.
      * 
      * Makes the target menu close.
      */
     public void CloseMenu(int index)
     {
-        menus[index].SetActive(false);
+        if(active) menus[index].SetActive(false);
     }
 
     /* Function: Pause
@@ -50,6 +52,8 @@ public class MenuHandler : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        isPaused = true;
     }
 
     /* Function: Continue
@@ -61,5 +65,18 @@ public class MenuHandler : MonoBehaviour
     public void Continue()
     {
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        isPaused = false;
+    }
+
+    /* Function Stop
+     * 
+     * Returns: Nothing
+     * 
+     * Deactivates the menu handler.
+     */
+    public void Stop()
+    {
+        active = false;
     }
 }
